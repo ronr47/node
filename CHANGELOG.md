@@ -1,5 +1,56 @@
 # Changelog
 
+## [0.8.0](https://github.com/Gitlawb/node/compare/v0.7.1...v0.8.0) (2026-08-16)
+
+
+### Features
+
+* **node,git:** cap concurrent served git ops with a 503 load-shed ([#62](https://github.com/Gitlawb/node/issues/62)) ([5981257](https://github.com/Gitlawb/node/commit/5981257be582fe1d39980bb2b1b3ff5c98448e84))
+
+
+### Bug Fixes
+
+* **attest:** use strict Ed25519 verification with regression test ([1fcbbbd](https://github.com/Gitlawb/node/commit/1fcbbbd89c027ae7d1d903f705631d94f8dfbadc))
+* **ci:** add tested release tag resolver ([1b65f70](https://github.com/Gitlawb/node/commit/1b65f70403ab47ced8c2828745c1c79c89a185e4))
+* **ci:** recognize namespaced test attributes in pr-triage's needs-tests check ([1989fcc](https://github.com/Gitlawb/node/commit/1989fcca112d0efb56978efe09d9a836afa7cb59))
+* **ci:** reject unsafe release dispatch tags ([7b365b0](https://github.com/Gitlawb/node/commit/7b365b0dc3ef3b5e3d14fd62bccc434e57200612))
+* **ci:** reject unsafe release dispatch tags ([0b990d6](https://github.com/Gitlawb/node/commit/0b990d687f0eb379b62eb600ede2a6233017e419))
+* **core:** count distinct signer DIDs in certificate threshold check ([3993fd1](https://github.com/Gitlawb/node/commit/3993fd1f5daacbebb8f8e2c62af8856c493ec87a))
+* **core:** Count distinct signer DIDs in certificate threshold check ([50d3cbb](https://github.com/Gitlawb/node/commit/50d3cbbe97f77b3cab9fab220add9f3a0d0dbc2f))
+* **core:** enforce strict RFC 8032 Ed25519 signature verification ([425ebf4](https://github.com/Gitlawb/node/commit/425ebf40e7737f44c5fe4e9dc8995c8aeb074ce1))
+* **core:** use strict Ed25519 signature verification ([a6c13be](https://github.com/Gitlawb/node/commit/a6c13be15b1421f3791e49a8219ea739f1e3ec6e))
+* **git-remote:** abort fetch on EOF without POSTing; harden the real-git test harness ([#192](https://github.com/Gitlawb/node/issues/192)) ([1cb930c](https://github.com/Gitlawb/node/commit/1cb930cbd57ea5d232edddc8e50dc94fab4362a5))
+* **git-remote:** drive multi-round fetch as a v0 stateless-RPC client loop ([#117](https://github.com/Gitlawb/node/issues/117)) ([5fdf155](https://github.com/Gitlawb/node/commit/5fdf155c7fd7398f61c200c256cb7327729f378a))
+* **git-remote:** drive multi-round fetch as a v0 stateless-RPC client loop ([#117](https://github.com/Gitlawb/node/issues/117)) ([a64b141](https://github.com/Gitlawb/node/commit/a64b14150dfb7e369c16e5fab98375ba0ce38404))
+* **git-remote:** normalize the shim's accepted socket to blocking ([10e0840](https://github.com/Gitlawb/node/commit/10e0840dd95204d2b8faa1c594808e2ad57bc9c4))
+* **git-remote:** normalize the shim's accepted socket to blocking ([#192](https://github.com/Gitlawb/node/issues/192)) ([8d7f95f](https://github.com/Gitlawb/node/commit/8d7f95fd63769ef30540f216190e1bb52ccd4f69))
+* **git-remote:** reject malformed pkt-line length headers instead of flushing ([8c04043](https://github.com/Gitlawb/node/commit/8c04043fb56b5030a0aa6b328c91f20173352aa6))
+* **git-remote:** skip content-free flush rounds in the fetch loop ([#117](https://github.com/Gitlawb/node/issues/117)) ([68ba492](https://github.com/Gitlawb/node/commit/68ba49267c8d65169ab9adf0552761f87baba4c1))
+* **node:** bind a peer row to its DID so only its keyholder can repoint it ([#273](https://github.com/Gitlawb/node/issues/273)) ([8d38043](https://github.com/Gitlawb/node/commit/8d38043a4ca7d0df3c9a4c4bdbb171d7adcdec4f))
+* **node:** bound legacy readiness fallback ([5af14c2](https://github.com/Gitlawb/node/commit/5af14c203d07fdd2d0b5689fcb12e189237dbbb2))
+* **node:** bound peer failure tracking ([74f7554](https://github.com/Gitlawb/node/commit/74f75548941712573d344aa058d162f40189b4df))
+* **node:** count a completed fetch once per fetch, not per stateless-RPC POST ([1c690c1](https://github.com/Gitlawb/node/commit/1c690c125c16ad2ed38a5885d0e16b96789b715e))
+* **node:** count fetch completion from the response outcome, not the request ([5a5d4e1](https://github.com/Gitlawb/node/commit/5a5d4e1b43a5b37fcc57731ec504b221a58931f1))
+* **node:** Escape LIKE metacharacters in certificate prefix search ([eeafa1f](https://github.com/Gitlawb/node/commit/eeafa1fa5350fb2d15ba30ac6cd6ad8247b4b7ec))
+* **node:** Escape LIKE wildcards in certificate prefix search ([96d8123](https://github.com/Gitlawb/node/commit/96d8123e0f84e85a7b0234ad84f5e603a5a303aa))
+* **node:** harden peer readiness state ([6bd8f41](https://github.com/Gitlawb/node/commit/6bd8f4121235ec6c4b7062aadcf3a631f174510c))
+* **node:** make metrics::init race-safe with Once ([c45ec96](https://github.com/Gitlawb/node/commit/c45ec9605d55171f7b8f1b0b542478097ddf43a3))
+* **node:** map ipfs/arweave DB outages to 503 via bare ? ([#251](https://github.com/Gitlawb/node/issues/251)) ([0e2328b](https://github.com/Gitlawb/node/commit/0e2328bd8044ce6e8923cc6bd42219068d3f6b9d))
+* **node:** map ipfs/arweave DB outages to 503 via bare ? ([#251](https://github.com/Gitlawb/node/issues/251)) ([c29a91a](https://github.com/Gitlawb/node/commit/c29a91af6b7eb444e202f4724e3f677d2ef25466))
+* **node:** opaque AppError::Internal and AppError::Db HTTP bodies ([#226](https://github.com/Gitlawb/node/issues/226)) ([241b366](https://github.com/Gitlawb/node/commit/241b36633bca7e0ead33bf670b7c1531c3bd9ab5))
+* **node:** opaque AppError::Internal and AppError::Db HTTP bodies ([#226](https://github.com/Gitlawb/node/issues/226)) ([d192028](https://github.com/Gitlawb/node/commit/d192028ee1487a3638c545d6a39e58a4575df1f1))
+* **node:** opaque GraphQL DB error messages ([#250](https://github.com/Gitlawb/node/issues/250)) ([c10ccf1](https://github.com/Gitlawb/node/commit/c10ccf1f059eae18fcb0b7058a35bb134838b790))
+* **node:** preserve legacy peer compatibility ([547f9ae](https://github.com/Gitlawb/node/commit/547f9aed10706bc617d0e1e2e5346cf52d19a901))
+* **node:** use readiness for peer liveness ([225644a](https://github.com/Gitlawb/node/commit/225644a3ea0302ae91959016928df1040ddd9cb5))
+* **node:** use readiness for peer liveness ([1a841a9](https://github.com/Gitlawb/node/commit/1a841a99e2d40129a33f1898d3ce28d05eb04632))
+* **release:** bump icaptcha-client with the rest of the workspace ([6668525](https://github.com/Gitlawb/node/commit/6668525f41936ed2e1f8a1334b0dd17eaea866f0))
+* **repo_store:** use SHA-256 for stable advisory-lock key ([#210](https://github.com/Gitlawb/node/issues/210)) ([c380f9c](https://github.com/Gitlawb/node/commit/c380f9cee5139a2cab6fc52000d43844b86bb143))
+* **repo_store:** use SHA-256 for stable advisory-lock key ([#210](https://github.com/Gitlawb/node/issues/210)) ([89e10d0](https://github.com/Gitlawb/node/commit/89e10d0ff12dcccae3bd4490548d906f77d76636))
+* **review:** assert the read-timeout postcondition and drop the socket clone ([4d9bd5a](https://github.com/Gitlawb/node/commit/4d9bd5a18a0692baa67f94aac8e8663d8e69bdac))
+* **review:** bound the probe's channel waits and stop overstating the handshake ([d4e5ecf](https://github.com/Gitlawb/node/commit/d4e5ecf299afaabf05eee22db462b9314b5a6998))
+* **review:** make the LIKE escape independent of the SQL parser mode ([1d3987b](https://github.com/Gitlawb/node/commit/1d3987bba6619a64a2cef15023224cbaa6cc8d1b)), closes [#319](https://github.com/Gitlawb/node/issues/319)
+* **test:** match SHA-256 advisory-lock key in receive-pack deadline test ([c68e1b0](https://github.com/Gitlawb/node/commit/c68e1b07f8db752cff786bdc9c226b49889a40b1))
+
 ## [0.7.1](https://github.com/Gitlawb/node/compare/v0.7.0...v0.7.1) (2026-08-03)
 
 
